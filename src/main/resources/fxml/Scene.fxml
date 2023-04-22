@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
    <top>
       <Label text="Alien Translator" BorderPane.alignment="CENTER">
          <font>
@@ -12,4 +17,21 @@
          </font>
       </Label>
    </top>
+   <left>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtInput" />
+            <Button fx:id="btmTranslate" mnemonicParsing="false" onAction="#doTranslate" text="Translate" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="50.0" />
+         </BorderPane.margin>
+      </HBox>
+   </left>
+   <bottom>
+      <TextArea fx:id="txtOutput" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <Button fx:id="btmClear" mnemonicParsing="false" onAction="#doClear" text="Clear" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
